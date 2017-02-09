@@ -1,0 +1,26 @@
+<h1>ADDING QUESTION</h1>
+<a href="#!/home">Cancel</a>
+<form name="QuestionForm" class="question_form" ng-submit="newQuestion( newQstn )">
+  Question:
+    <input style="display:block" name='question' type="text" ng-model="newQstn.question" ng-minlength="15" required>
+    <div ng-messages="QuestionForm.question.$error" style="color:maroon" role="alert">
+      <div ng-message="required">You did not enter a field</div>
+      <div ng-message="minlength">Your field must be at least 15 characters long</div>
+    </div>
+  Answer:
+  <input style="display:block" name='answer' type="text" ng-model="newQstn.answer" required>
+  <div ng-messages="QuestionForm.answer.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+  </div>
+  Wrong:
+  <input style="display:block" name='wrong1' type="text" ng-model="newQstn.wrong1" required>
+  <div ng-messages="QuestionForm.wrong1.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+  </div>
+  Wrong2:
+  <input style="display:block" name='wrong2' type="text" ng-model="newQstn.wrong2" required>
+  <div ng-messages="QuestionForm.wrong2.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+  </div>
+  <input type="submit"  value="Add question">
+</form>

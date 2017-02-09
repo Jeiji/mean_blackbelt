@@ -1,17 +1,24 @@
-app.controller('dshbrdCtrl' , ['$scope' , '$location' , 'bcktFctry' , 'prdctFctry' , 'usrFctry' ,  function( scope , location , of , pf , uf ) {
+app.controller('dshbrdCtrl' , ['$scope' , '$location', 'bigFactory' ,  function( scope , location , bf ) {
 
-  const idxUsrs = function(){
-    uf.idx( function( allUsrs ){
-      scope.usrs = allUsrs
-    });
+  scope.scores = [];
+
+  const loadUp = function(){
+    if( !bf.logged ){
+      var sn = prompt( 'Username?' )
+      console.log(sn);
+      bf.logged = sn
+    }
+
+    if( bf.scoreToShow ){
+      scope.scoreToShow = bf.scoreToShow
+    }
+
+    bf.idxScores( function( data ){
+        console.log("THE DATA'S BACK",data);
+        scope.scores = data.data
+    })
   };
-  idxUsrs();
+  loadUp();
 
-
-  scope.usrLogin = function( usr ){
-    uf.addUsr( usr , function( res ){
-      location.url('/buckets')
-    });
-  };
 
 }]);

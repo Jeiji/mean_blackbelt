@@ -45,7 +45,10 @@ app.controller('bcktCtrl' , ['$scope' , 'bcktFctry' , 'usrFctry' , '$location' ,
   };
 
   scope.doBckt = function( bckt ){
-    bf.doBckt( bckt );
+    bf.doBckt( bckt , function( dataFromBF ){
+      console.log( ` HERE'S THE NEW TEST THING ${dataFromBF}` );
+      console.log(dataFromBF);
+    });
     idx_U();
   };
 

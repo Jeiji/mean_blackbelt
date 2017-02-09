@@ -2,6 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!-- Jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
     <script src="angular/angular.js"></script>
     <script src="angular-route/angular-route.js"></script>
     <script src="angular-messages/angular-messages.js"></script>
@@ -11,17 +17,22 @@
     <script src="factories/usrFctry.js"></script>
     <script src="factories/prdctFctry.js"></script>
     <script src="factories/bcktFctry.js"></script>
+    <script src="factories/questionFctry.js"></script>
+    <script src="factories/bigFactory.js"></script>
     <!-- ***** CONTROLLERS ***** -->
-    <script src="controllers/idxCtrl.js"></script>
     <script src="controllers/usrCtrl.js"></script>
     <script src="controllers/bcktCtrl.js"></script>
+    <script src="controllers/questionCtrl.js"></script>
+    <script src="controllers/quizCtrl.js"></script>
     <script src="controllers/dshbrdCtrl.js"></script>
+    <script src="controllers/logoutCtrl.js"></script>
 
-    <title>MEAN_Store</title>
+    <title>TRIVIA STUFF WAW</title>
   </head>
   <body ng-app='app'>
-    <a href="#!/dashboard">Dashboard</a> |
-    <a href="#!/buckets">Buckets</a> |
+    <a href="#!/home">Dashboard</a> |
+    <a href="#!/add_question">Add a Question</a> |
+    <a href="#!/logout">Logout</a>
     <div ng-view></div>
   </body>
 </html>

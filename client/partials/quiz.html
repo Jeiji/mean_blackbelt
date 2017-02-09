@@ -1,0 +1,17 @@
+<h1>TAKING QUIZ</h1>
+<a href="#!/home">Cancel</a>
+<form name="answerSheet" ng-submit="newScore()">
+    <fieldset ng-repeat="q in thisTest track by $index" id="{{ questions.indexOf(q) }}" ng-model="answers.$index">
+      {{ q.question }}
+      <br>
+        <input ng-model="answers[$index].answer" type="radio" value="{{ q.answer }}" name="{{ thisTest.indexOf(q) }}" required="">{{ q.answer }}<br>
+
+        <input ng-model="answers[$index].answer" type="radio" value="{{ q.wrong1 }}" name="{{ thisTest.indexOf(q) }}" required="">{{ q.wrong1 }}<br>
+        <input ng-model="answers[$index].answer" type="radio" value="{{ q.wrong2 }}" name="{{ thisTest.indexOf(q) }}" required="">{{ q.wrong2 }}<br>
+    </fieldset>
+    <div ng-messages="answerSheet.questions.indexOf(q).$error" style="color:maroon" role="alert">
+      <div ng-message="required">You did not enter a field</div>
+    </div>
+    {{ answers }}
+<input type="submit" name="" value="Submit">
+</form>

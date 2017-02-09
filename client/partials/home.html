@@ -1,1 +1,25 @@
-<h1>GOGOGOGOGO</h1>
+<h1>DASHBOARD</h1>
+<a href="#!/quiz">PLAY THE QUIZ</a><br><br>
+
+<div ng-if="scoreToShow.score">
+  COONGRATS, {{ scoreToShow.name }}, you got {{ scoreToShow.score }}, which is {{ scoreToShow.percentage }}%!
+</div>
+
+<input type="text" ng-model="filter_name" value="">
+All Scores
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat=" s in scores | filter : filter_name | orderBy:'-percentage'" >
+      <td>{{ s.name }}</td>
+      <td>{{ s.score }}</td>
+      <td><td>{{ s.percentage }}</td></td>
+    </tr>
+  </tbody>
+</table>

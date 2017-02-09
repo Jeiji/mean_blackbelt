@@ -23,7 +23,7 @@ require('./server/config/mongoose.js');
 require("./server/config/routes.js")(app);
 
 //---------------- SERVER LISTENER -------------------
-const port = 8000;
+const port = 9000;
 app.listen( port , function(){
-  console.log(`Listening to port ${port} for 'MEAN Store'`);
+  console.log(`Listening to port ${port} for 'MEAN Blackbelt 3'`);
 });

@@ -24,6 +24,7 @@ app.factory( 'usrFctry' , [ '$http' , function( http ){
     });
   };
 
+
 };
   return new usrFctry();
 }]);
