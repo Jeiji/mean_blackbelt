@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 UserSchema = new mongoose.Schema(
   {
     name : { type : String , required : true , minlength : 3 },
+    password : { type : String , required : true , minlength : 3 },
     buckets : [{ type : Schema.Types.ObjectId, ref: 'Bckt' }],
   } ,
   { timestamps : true });
