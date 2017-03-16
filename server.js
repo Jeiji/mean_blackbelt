@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 
+
 const app = express();
 
 // app.use( bodyParser.urlencoded( { extended : true }));
@@ -15,6 +16,11 @@ app.use( express.static( path.join( __dirname , './client')));
 app.use( express.static( path.join( __dirname , './client/partials')));
 app.use( express.static( path.join( __dirname , './bower_components')));
 
+//---------------- SESSIONS -------------------
+app.use(session({
+  secret: 'mekele',
+  cookie: { secure: true }
+}))
 
 //---------------- DATABASE -------------------
 require('./server/config/mongoose.js');
@@ -25,5 +31,5 @@ require("./server/config/routes.js")(app);
 //---------------- SERVER LISTENER -------------------
 const port = 8000;
 app.listen( port , function(){
-  console.log(`Listening to port ${port} for 'MEAN Store'`);
+  console.log(`Listening to port ${port} for 'Bucket List'`);
 });

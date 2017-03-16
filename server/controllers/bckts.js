@@ -31,7 +31,25 @@ function ordrsCtrl(){
 
           };
 
+
         });
+        if( nb.usrId2 ){
+          console.log(`++++++++++++++++++ DON'T FORGET ME! (${ nb.usrId2 }) ++++++++++++++++++`);
+          User.findOne( { _id : nb.usrId2 } , function( err , user ){
+            if( err ){
+              console.log(err.errors);
+            }else{
+              console.log(ab);
+              user.buckets.push( ab );
+              console.log(user);
+              user.save();
+              console.log(`Now adding to User...`);
+
+            };
+
+
+          });
+        }
       };
     });
   };

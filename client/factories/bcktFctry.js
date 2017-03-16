@@ -5,16 +5,15 @@ app.factory( 'bcktFctry' , [ '$http' , function( http ){
     var _this = this;
 
     this.idx = function( callbackToCtrl ){
-      let dbOrders = [];
-      http.get( '/ordrs' ).then( function( res ){
-        dbOrders = res.data;
-        orders = dbOrders
-        callbackToCtrl( dbOrders );
+      let dbBuckets = [];
+      http.get( '/bckts' ).then( function( res ){
+        dbBuckets = res.data;
+        orders = dbBuckets
+        callbackToCtrl( dbBuckets );
       });
     };
 
     this.addBckt = function( newBckt ){
-
       http.post( '/add_bckt' , newBckt ).then( function( res ){
         console.log(res);
       });

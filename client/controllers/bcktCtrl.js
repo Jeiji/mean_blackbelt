@@ -27,13 +27,21 @@ app.controller('bcktCtrl' , ['$scope' , 'bcktFctry' , 'usrFctry' , '$location' ,
   };
   idxLogged();
 
-  const idx_U = function(){
+  const idx_B = function(){
+    uf.idx( function( dataFromCF ){
+      scope.users = dataFromCF
+    });
+  };
 
-  uf.idx( function( dataFromCF ){
-    scope.users = dataFromCF
-  });
-};
+  const idx_U = function(){
+    uf.idx( function( dataFromCF ){
+      scope.users = dataFromCF
+    });
+  };
+
   idx_U();
+
+
 
 
   scope.addBckt = function( newBckt ){
@@ -45,7 +53,10 @@ app.controller('bcktCtrl' , ['$scope' , 'bcktFctry' , 'usrFctry' , '$location' ,
   };
 
   scope.doBckt = function( bckt ){
-    bf.doBckt( bckt );
+    bf.doBckt( bckt , function( dataFromBF ){
+      console.log( ` HERE'S THE NEW TEST THING ${dataFromBF}` );
+      console.log(dataFromBF);
+    });
     idx_U();
   };
 

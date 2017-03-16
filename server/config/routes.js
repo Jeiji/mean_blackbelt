@@ -42,6 +42,7 @@ module.exports = function( app ){
   // });
 
   app.post( '/add_bckt' , function( req , res ){
+    console.log(`\nAdding bucket:`,req.body);
     bckts.add( req , res );
   });
 
